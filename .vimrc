@@ -102,9 +102,31 @@ if has('langmap') && exists('+langnoremap')
   set langnoremap
 endif
 
+" Enable line numbers
 
-" Add optional packages.
-"
-" The matchit plugin makes the % command work better, but it is not backwards
-" compatible.
-packadd matchit
+set number
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'tomasr/molokai'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/syntastic'
+Plug 'airblade/vim-gitgutter'
+Plug 'valloric/youcompleteme'
+Plug 'tpope/vim-rails'
+Plug 'bling/vim-airline'
+Plug 'altercation/vim-colors-solarized'
+Plug 'flazz/vim-colorschemes'
+Plug 'kien/ctrlp.vim'
+
+" Add plugins to &runtimepath
+call plug#end()
+
+set updatetime=250
+
+colorscheme atom
+set expandtab
+set tabstop=2
+set shiftwidth=2
+
+
