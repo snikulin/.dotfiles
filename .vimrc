@@ -124,7 +124,7 @@ call plug#end()
 
 set updatetime=250
 
-colorscheme atom
+colorscheme monokai
 set expandtab
 set tabstop=2
 set shiftwidth=2
