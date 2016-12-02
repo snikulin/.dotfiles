@@ -113,19 +113,31 @@ Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-rails'
-Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'altercation/vim-colors-solarized'
 Plug 'flazz/vim-colorschemes'
 Plug 'kien/ctrlp.vim'
+Plug 'tpope/vim-dispatch'
 
 " Add plugins to &runtimepath
 call plug#end()
 
 set updatetime=250
 
-colorscheme monokai
 set expandtab
 set tabstop=2
 set shiftwidth=2
 
+colorscheme Monokai
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+let g:airline_theme='powerlineish'
+let g:airline#extensions#syntastic#enabled = 1
+set laststatus=2
+
+nnoremap <C-PageDown> :bnext<CR>
+nnoremap <C-PageUp> :bprevious<CR>
+nnoremap <C-X> :bdelete<CR>
 
