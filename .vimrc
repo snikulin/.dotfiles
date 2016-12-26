@@ -25,6 +25,8 @@ Plugin 'keith/rspec.vim'
 Plugin 'bruno-/vim-ruby-fold'
 Plugin 'sirver/ultisnips'
 Plugin 'honza/vim-snippets'
+Plugin 'tomasr/molokai'
+Plugin 'nanotech/jellybeans.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -63,6 +65,11 @@ set number    " show line numbers
 
 syntax enable
 set background=dark
+set gfn=Ubuntu\ Mono\ 16
+set go-=T
+set go-=m
+set go-=r
+set bo=all
 
 " airline settings
 let g:airline#extensions#tabline#enabled = 1
@@ -83,9 +90,11 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"
 
 let g:user_emmet_mode='a'
+let g:molokai_original = 0
+let g:rehash256 = 1
 
 set laststatus=2
-colorscheme slate
+colorscheme molokai
 
 nnoremap <C-End> :bnext!<CR>
 nnoremap <C-Home> :bprevious!<CR>
@@ -93,4 +102,4 @@ nnoremap <C-X> :bdelete<CR>
 nnoremap <C-\> :NERDTreeToggle<CR>
 nnoremap <C-s> :write<CR>
 nnoremap <F8> :TagbarToggle<CR>
-
+nnoremap <F7> mzgg=G`z
