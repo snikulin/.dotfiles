@@ -23,6 +23,7 @@ Plugin 'ervandew/supertab'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'keith/rspec.vim'
+Plugin 'skwp/vim-rspec'
 Plugin 'bruno-/vim-ruby-fold'
 Plugin 'sirver/ultisnips'
 Plugin 'honza/vim-snippets'
@@ -30,6 +31,7 @@ Plugin 'tomasr/molokai'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'mileszs/ack.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -64,13 +66,16 @@ set showcmd             " display incomplete commands
 set incsearch           " do incremental searching
 syntax enable
 set background=dark
-set gfn=Ubuntu\ Mono\ 16 " font for gui
-
+" set gfn=Ubuntu\ Mono\ 16 " font for gui
+set gfn=Ubuntu\ Mono\ derivative\ Powerline:h18
 " Use one space, not two, after punctuation.
 set nojoinspaces
 
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 if executable('ag')
+  " Use Ag for Ack searcher
+  let g:ackprg = 'ag --vimgrep' 
+
   " Use Ag over Grep
   set grepprg=ag\ --nogroup\ --nocolor
 
