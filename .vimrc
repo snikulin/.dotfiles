@@ -66,8 +66,14 @@ set showcmd             " display incomplete commands
 set incsearch           " do incremental searching
 syntax enable
 set background=dark
-" set gfn=Ubuntu\ Mono\ 16 " font for gui
-set gfn=Ubuntu\ Mono\ derivative\ Powerline:h18
+
+let s:uname = system("uname -s")
+if s:uname == "Darwin\n"
+  set gfn=Ubuntu\ Mono\ derivative\ Powerline:h18
+else
+  set gfn=Ubuntu\ Mono\ 16 " font for gui
+endif
+
 " Use one space, not two, after punctuation.
 set nojoinspaces
 
