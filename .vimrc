@@ -70,8 +70,12 @@ set background=dark
 let s:uname = system("uname -s")
 if s:uname == "Darwin\n"
   set gfn=Ubuntu\ Mono\ derivative\ Powerline:h18
+  nnoremap <M-D-Left> :bnext!<CR>
+  nnoremap <M-D-right> :bprevious!<CR>
 else
   set gfn=Ubuntu\ Mono\ 16 " font for gui
+  nnoremap <C-End> :bnext!<CR>
+  nnoremap <C-Home> :bprevious!<CR>
 endif
 
 " Use one space, not two, after punctuation.
@@ -144,8 +148,6 @@ let g:rehash256 = 1
 set laststatus=2
 colorscheme molokai
 
-nnoremap <C-End> :bnext!<CR>
-nnoremap <C-Home> :bprevious!<CR>
 nnoremap <C-X> :bdelete<CR>
 nnoremap <C-\> :NERDTreeToggle<CR>
 nnoremap <C-s> :write<CR>
