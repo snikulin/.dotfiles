@@ -8,8 +8,8 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
-Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
+" Plugin 'scrooloose/nerdtree'
+" Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-surround'
 Plugin 'kien/ctrlp.vim'
@@ -74,8 +74,8 @@ else
   set gfn=Ubuntu\ Mono\ 16 " font for gui
 endif
 
-nnoremap <C-S-Left> :bnext!<CR>
-nnoremap <C-S-Right> :bprevious!<CR>
+nnoremap <C-S-Right> :bnext!<CR>
+nnoremap <C-S-Left> :bprevious!<CR>
 
 " Use one space, not two, after punctuation.
 set nojoinspaces
@@ -148,7 +148,7 @@ set laststatus=2
 colorscheme molokai
 
 nnoremap <C-X> :bdelete<CR>
-nnoremap <C-\> :NERDTreeToggle<CR>
+" nnoremap <C-\> :NERDTreeToggle<CR>
 nnoremap <C-s> :write<CR>
 nnoremap <F8> :TagbarToggle<CR>
 nnoremap <F7> mzgg=G`z
