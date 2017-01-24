@@ -70,13 +70,12 @@ set background=dark
 let s:uname = system("uname -s")
 if s:uname == "Darwin\n"
   set gfn=Ubuntu\ Mono\ derivative\ Powerline:h18
-  nnoremap <M-D-Left> :bnext!<CR>
-  nnoremap <M-D-right> :bprevious!<CR>
 else
   set gfn=Ubuntu\ Mono\ 16 " font for gui
-  nnoremap <C-End> :bnext!<CR>
-  nnoremap <C-Home> :bprevious!<CR>
 endif
+
+nnoremap <C-S-Left> :bnext!<CR>
+nnoremap <C-S-Right> :bprevious!<CR>
 
 " Use one space, not two, after punctuation.
 set nojoinspaces
@@ -153,3 +152,12 @@ nnoremap <C-\> :NERDTreeToggle<CR>
 nnoremap <C-s> :write<CR>
 nnoremap <F8> :TagbarToggle<CR>
 nnoremap <F7> mzgg=G`z
+
+if &term =~ '^screen'
+  " tmux will send xterm-style keys when its xterm-keys option is on
+  execute "set <xUp>=\e[1;*A"
+  execute "set <xDown>=\e[1;*B"
+  execute "set <xRight>=\e[1;*C"
+  execute "set <xLeft>=\e[1;*D"
+endif
+
