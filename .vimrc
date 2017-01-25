@@ -108,7 +108,7 @@ set go-=r
 
 set bo=all " do not beep
 
-set textwidth=120
+set textwidth=80
 set colorcolumn=+1
 
 " Display extra whitespace
