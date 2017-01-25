@@ -68,6 +68,8 @@ set incsearch           " do incremental searching
 syntax enable
 set background=dark
 
+command! MakeTags !ctags -R .
+
 let s:uname = system("uname -s")
 if s:uname == "Darwin\n"
   set gfn=Ubuntu\ Mono\ derivative\ Powerline:h18
