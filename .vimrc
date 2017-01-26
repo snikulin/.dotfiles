@@ -23,7 +23,7 @@ Plugin 'ervandew/supertab'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'keith/rspec.vim'
-Plugin 'skwp/vim-rspec'
+Plugin 'thoughtbot/vim-rspec'
 Plugin 'bruno-/vim-ruby-fold'
 Plugin 'sirver/ultisnips'
 Plugin 'honza/vim-snippets'
@@ -59,6 +59,7 @@ set tabstop=2
 set shiftwidth=2
 set shiftround
 set number    " show line numbers
+set relativenumber
 set numberwidth=5
 set backspace=indent,eol,start
 set history=50          " keep 50 lines of command line history
@@ -146,6 +147,14 @@ let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"
 let g:user_emmet_mode='a'
 let g:molokai_original = 0
 let g:rehash256 = 1
+
+" RSpec.vim mappings
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
+
+
 
 set laststatus=2
 colorscheme molokai
