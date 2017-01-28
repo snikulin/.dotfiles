@@ -24,7 +24,6 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'keith/rspec.vim'
 Plugin 'thoughtbot/vim-rspec'
-Plugin 'bruno-/vim-ruby-fold'
 Plugin 'sirver/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'tomasr/molokai'
@@ -70,6 +69,7 @@ set showcmd             " display incomplete commands
 set incsearch           " do incremental searching
 syntax enable
 set background=dark
+set noswapfile
 
 command! MakeTags !ctags -R .
 
@@ -80,8 +80,8 @@ else
   set gfn=Ubuntu\ Mono\ 16 " font for gui
 endif
 
-nnoremap <C-S-Right> :bnext!<CR>
-nnoremap <C-S-Left> :bprevious!<CR>
+nnoremap <C-k> :bnext!<CR>
+nnoremap <C-j> :bprevious!<CR>
 
 " Use one space, not two, after punctuation.
 set nojoinspaces
