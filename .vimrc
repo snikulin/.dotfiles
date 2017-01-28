@@ -53,6 +53,7 @@ if has('mouse')
   set mouse=a
 endif
 
+let mapleader = "\<Space>"
 set autoindent
 set updatetime=250
 set expandtab
@@ -128,6 +129,8 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline_theme='powerlineish'
 let g:airline#extensions#syntastic#enabled = 1
+set ttimeoutlen=10 " without it there are timeout when leaving insert mode
+set noshowmode     " vim-airline already show mode
 
 " syntastic settings
 let g:syntastic_always_populate_loc_list = 1
@@ -164,7 +167,8 @@ nnoremap <C-X> :bdelete<CR>
 nnoremap <C-\> :NERDTreeToggle<CR>
 nnoremap <C-s> :write<CR>
 nnoremap <F8> :TagbarToggle<CR>
-nnoremap <F7> mzgg=G`z
+nnoremap <Leader>w mzgg=G`z:write<CR>
+nnoremap <Leader>n :tabnew<CR>
 
 if &term =~ '^screen'
   " tmux will send xterm-style keys when its xterm-keys option is on
