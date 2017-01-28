@@ -70,6 +70,7 @@ set showcmd             " display incomplete commands
 set incsearch           " do incremental searching
 syntax enable
 set background=dark
+set noswapfile
 
 command! MakeTags !ctags -R .
 
