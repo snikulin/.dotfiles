@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-  export ZSH=$HOME/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -55,6 +55,8 @@ plugins=(git battery brew bundler docker docker-compose rails sublime)
 
 # export PATH="/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
+
+export PATH="$PATH:$HOME/.rvm/bin:$HOME/bin"
 
 source ~/.profile
 source $ZSH/oh-my-zsh.sh
