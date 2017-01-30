@@ -80,6 +80,12 @@ else
   set gfn=Ubuntu\ Mono\ 16 " font for gui
 endif
 
+" Disable arrow keys navigation
+nnoremap <Left> :echoe "Use h"<CR>
+nnoremap <Right> :echoe "Use l"<CR>
+nnoremap <Up> :echoe "Use k"<CR>
+nnoremap <Down> :echoe "Use j"<CR>
+
 nnoremap <C-k> :bnext!<CR>
 nnoremap <C-j> :bprevious!<CR>
 
