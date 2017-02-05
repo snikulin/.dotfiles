@@ -17,12 +17,9 @@ Plugin 'majutsushi/tagbar'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-rails'
 Plugin 'vim-ruby/vim-ruby'
-<<<<<<< HEAD
 Plugin 'kana/vim-textobj-user'
 Plugin 'nelstrom/vim-textobj-rubyblock'
-=======
 Plugin 'tpope/vim-bundler'
->>>>>>> 21f11455a547fb624353dff99787958159125865
 Plugin 'godlygeek/tabular'
 Plugin 'mattn/emmet-vim'
 Plugin 'ervandew/supertab'
