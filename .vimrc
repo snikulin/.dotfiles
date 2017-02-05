@@ -160,7 +160,7 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"
 
 let g:user_emmet_mode='a'
-let g:molokai_original = 0
+" let g:molokai_original = 0
 let g:rehash256 = 1
 
 " RSpec.vim mappings
@@ -172,7 +172,8 @@ map <Leader>a :call RunAllSpecs()<CR>
 
 
 set laststatus=2
-colorscheme molokai
+" colorscheme molokai
+colorscheme jellybeans
 
 nnoremap <C-X> :bdelete<CR>
 nnoremap <C-\> :NERDTreeToggle<CR>
