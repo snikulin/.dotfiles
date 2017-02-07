@@ -72,6 +72,9 @@ set history=50          " keep 50 lines of command line history
 set ruler               " show the cursor position all the time
 set showcmd             " display incomplete commands
 set incsearch           " do incremental searching
+set hlsearch            " highlight all matches
+set ignorecase          " case insensitive search
+set smartcase           " smart case sensitivity
 syntax enable
 set background=dark
 set noswapfile
@@ -181,6 +184,7 @@ nnoremap <C-s> :write<CR>
 nnoremap <F8> :TagbarToggle<CR>
 nnoremap <Leader>w mzgg=G`z:write<CR>
 nnoremap <Leader>n :tabnew<CR>
+nnoremap <Leader>h :nohlsearch<CR>
 
 if &term =~ '^screen'
   " tmux will send xterm-style keys when its xterm-keys option is on
