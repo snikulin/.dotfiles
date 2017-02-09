@@ -1,3 +1,6 @@
+" vim: set foldmethod=marker:
+
+" {{{ Vundle plugins
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -49,22 +52,18 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+" }}}
 
+" {{{ General settings
 runtime macros/matchit.vim
-
-" In many terminal emulators the mouse works just fine, thus enable it.
-if has('mouse')
-  set mouse=a
-endif
-
-let mapleader = "\<Space>"
 set autoindent
 set updatetime=250
 set expandtab
 set tabstop=2
 set shiftwidth=2
 set shiftround
-set number    " show line numbers
+set nojoinspaces        " Use one space, not two, after punctuation.
+set number              " show line numbers
 set relativenumber
 set numberwidth=5
 set backspace=indent,eol,start
@@ -75,12 +74,20 @@ set incsearch           " do incremental searching
 set hlsearch            " highlight all matches
 set ignorecase          " case insensitive search
 set smartcase           " smart case sensitivity
-syntax enable
 set background=dark
-set noswapfile
-
+set laststatus=2        " always show status line
+set noswapfile          " do not create swap file
+set textwidth=80
+set colorcolumn=+1
+set list listchars=tab:»·,trail:·,nbsp:· " Display extra whitespace
+set splitbelow          " Open new split panes to right and bottom
+set splitright
+colorscheme jellybeans
+syntax enable           " turn on syntax highlighting
 command! MakeTags !ctags -R .
+" }}}
 
+" {{{ GUI config
 let s:uname = system("uname -s")
 if s:uname == "Darwin\n"
   set gfn=Ubuntu\ Mono\ derivative\ Powerline:h18
@@ -88,22 +95,24 @@ else
   set gfn=Ubuntu\ Mono\ 16 " font for gui
 endif
 
-" Disable arrow keys navigation
-nnoremap <Left> :echoe "Use h"<CR>
-nnoremap <Right> :echoe "Use l"<CR>
-nnoremap <Up> :echoe "Use k"<CR>
-nnoremap <Down> :echoe "Use j"<CR>
+" settings to remove toolbar in GVIM
+set go-=T
+set go-=m
+set go-=r
 
-nnoremap <C-k> :bnext!<CR>
-nnoremap <C-j> :bprevious!<CR>
+set bo=all " do not beep
 
-" Use one space, not two, after punctuation.
-set nojoinspaces
+" In many terminal emulators the mouse works just fine, thus enable it.
+if has('mouse')
+  set mouse=a
+endif
 
-" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
+" }}}
+
+" {{{ Use The Silver Searcher
 if executable('ag')
   " Use Ag for Ack searcher
-  let g:ackprg = 'ag --vimgrep' 
+  let g:ackprg = 'ag --vimgrep'
 
   " Use Ag over Grep
   set grepprg=ag\ --nogroup\ --nocolor
@@ -119,34 +128,18 @@ if executable('ag')
     nnoremap \ :Ag<SPACE>
   endif
 endif
+" }}}
 
-
-" settings to remove toolbar in GVIM
-set go-=T
-set go-=m
-set go-=r
-
-set bo=all " do not beep
-
-set textwidth=80
-set colorcolumn=+1
-
-" Display extra whitespace
-set list listchars=tab:»·,trail:·,nbsp:·
-
-" Open new split panes to right and bottom, which feels more natural
-set splitbelow
-set splitright
-
-" airline settings
+" {{{ Airline settings
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline_theme='powerlineish'
 let g:airline#extensions#syntastic#enabled = 1
 set ttimeoutlen=10 " without it there are timeout when leaving insert mode
 set noshowmode     " vim-airline already show mode
+" }}}
 
-" syntastic settings
+" {{{ Syntastic settings
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -154,30 +147,35 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
 let g:syntastic_eruby_ruby_quiet_messages =
       \ {"regex": "possibly useless use of a variable in void context"}
+" }}}
 
-
-" UltiSnips configuration
+" {{{ UltiSnips configuration
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"
+" }}}
 
-let g:user_emmet_mode='a'
-" let g:molokai_original = 0
-let g:rehash256 = 1
+" {{{ Emmet config
+let g:user_emmet_mode='a' " enable all function in all mode
+" }}}
 
+" {{{ Key mappings
+let mapleader = "\<Space>"
 " RSpec.vim mappings
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 
+" Disable arrow keys navigation
+nnoremap <Left> :echoe "Use h"<CR>
+nnoremap <Right> :echoe "Use l"<CR>
+nnoremap <Up> :echoe "Use k"<CR>
+nnoremap <Down> :echoe "Use j"<CR>
 
-
-set laststatus=2
-" colorscheme molokai
-colorscheme jellybeans
-
+nnoremap <C-k> :bnext!<CR>
+nnoremap <C-j> :bprevious!<CR>
 nnoremap <C-X> :bdelete<CR>
 nnoremap <C-\> :NERDTreeToggle<CR>
 nnoremap <C-s> :write<CR>
@@ -185,7 +183,9 @@ nnoremap <F8> :TagbarToggle<CR>
 nnoremap <Leader>w mzgg=G`z:write<CR>
 nnoremap <Leader>n :tabnew<CR>
 nnoremap <Leader>h :nohlsearch<CR>
+" }}}
 
+" {{{ Tmux integration
 if &term =~ '^screen'
   " tmux will send xterm-style keys when its xterm-keys option is on
   execute "set <xUp>=\e[1;*A"
@@ -193,4 +193,4 @@ if &term =~ '^screen'
   execute "set <xRight>=\e[1;*C"
   execute "set <xLeft>=\e[1;*D"
 endif
-
+" }}}
