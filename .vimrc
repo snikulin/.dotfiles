@@ -15,7 +15,6 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-surround'
-Plugin 'kien/ctrlp.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-rails'
@@ -39,6 +38,9 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'mileszs/ack.vim'
 Plugin 'tmux-plugins/vim-tmux-focus-events'
 Plugin 'tpope/vim-obsession'
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
+Plugin 'flazz/vim-colorschemes'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -183,6 +185,10 @@ nnoremap <F8> :TagbarToggle<CR>
 nnoremap <Leader>w mzgg=G`z:write<CR>
 nnoremap <Leader>n :tabnew<CR>
 nnoremap <Leader>h :nohlsearch<CR>
+
+" Use Fuzzy search for files
+map <C-p> :Files<CR>
+
 " }}}
 
 " {{{ Tmux integration
