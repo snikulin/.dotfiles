@@ -162,6 +162,11 @@ let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"
 let g:user_emmet_mode='a' " enable all function in all mode
 " }}}
 
+" {{{ FZF config
+" preview by coderay
+let g:fzf_files_options = '--preview "(coderay {} || cat {}) 2> /dev/null | head -'.&lines.'"'
+" }}}
+
 " {{{ Key mappings
 let mapleader = "\<Space>"
 " RSpec.vim mappings
