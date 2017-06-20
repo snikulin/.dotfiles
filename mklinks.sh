@@ -8,6 +8,5 @@ ln -sf ~/.dotfiles/.zshrc ~/.zshrc
 ln -sf ~/.dotfiles/.tmux.conf ~/.tmux.conf
 
 if [[ `uname` = "Linux" ]]; then
-  dconf write /org/gnome/desktop/input-sources/xkb-options "['grp_led:scroll',
-  'caps:swapescape']"
+  dconf write /org/gnome/desktop/input-sources/xkb-options "['grp_led:scroll']"
 fi
