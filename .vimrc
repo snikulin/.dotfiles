@@ -182,8 +182,8 @@ nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
 
-nnoremap <C-k> :bnext!<CR>
-nnoremap <C-j> :bprevious!<CR>
+nnoremap <C-k> :tabnext<CR>
+nnoremap <C-j> :tabprevious<CR>
 nnoremap <C-X> :bdelete<CR>
 nnoremap <C-\> :NERDTreeToggle<CR>
 nnoremap <C-s> :write<CR>
