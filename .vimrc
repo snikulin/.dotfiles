@@ -199,6 +199,10 @@ map <C-p> :Files<CR>
 
 " }}}
 
+" {{{ Custom commands
+command Q quit
+" }}}
+
 " {{{ Tmux integration
 if &term =~ '^screen'
   " tmux will send xterm-style keys when its xterm-keys option is on
