@@ -159,6 +159,11 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"
 " }}}
 
+" {{{ Python plugins
+let g:python_host_prog  = '/usr/bin/python'
+let g:python3_host_prog = '/usr/bin/python3'
+" }}}
+
 " {{{ Emmet config
 let g:user_emmet_mode='a' " enable all function in all mode
 " }}}
