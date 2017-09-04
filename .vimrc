@@ -86,6 +86,7 @@ set list listchars=tab:»·,trail:·,nbsp:· " Display extra whitespace
 set splitbelow          " Open new split panes to right and bottom
 set splitright
 set cursorline          " Highlighting cursor line
+set cursorcolumn          " Highlighting cursor line
 colorscheme jellybeans
 syntax enable           " turn on syntax highlighting
 command! MakeTags !ctags -R .
