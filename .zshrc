@@ -59,6 +59,7 @@ plugins=(git battery brew bundler docker docker-compose rails sublime)
 export PATH="$PATH:$HOME/.rvm/bin:$HOME/bin"
 
 source ~/.profile
+source ~/.bash_aliases
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
