@@ -137,7 +137,7 @@ endif
 
 " {{{ Airline settings
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 0
 let g:airline_theme='powerlineish'
 let g:airline#extensions#syntastic#enabled = 1
 set ttimeoutlen=10 " without it there are timeout when leaving insert mode
