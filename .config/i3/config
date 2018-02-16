@@ -71,7 +71,8 @@ set $audio --no-startup-id bash ~/.config/Scripts/audio_pulse.sh
 
 
 ###---Basic Bindings---###
-bindsym $mod+Return     exec $term
+bindsym $mod+Return        exec $term
+bindsym $mod+Shift+Return  exec $term -- ssh home
 
 bindsym $mod+Shift+f    floating toggle
 bindsym $mod+Shift+t    layout tabbed
