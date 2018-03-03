@@ -107,7 +107,7 @@ bindsym $mod+s          gaps inner current plus 5
 bindsym $mod+Shift+s    gaps inner current minus 5
 
 # Exec menu
-bindsym $mod+d exec     rofi -show run -lines 5 -eh 2 -width 32 -opacity "85" -bw 0 -bc "$bg_color" -bg "$bg_color" -fg "$text_color" -hlbg "$bg_color" -hlfg "#9575cd" -font "Cantarell 18"
+bindsym $mod+d exec     rofi -show run -font "Cantarell 18"
 
 bindsym $mod+f          fullscreen toggle
 bindsym $mod+g          workspace prev
