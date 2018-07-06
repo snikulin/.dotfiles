@@ -20,6 +20,8 @@ set $inactive_text_color #676E7D
 set $urgent_bg_color     #E53935
 
 ###---Starting External Scripts---###
+# Set 4k resolution
+exec_always --no-startup-id ~/.screenlayout/4k.sh
 # Music player daemon:
 exec --no-startup-id mpd
 # Torrent daemon:
@@ -31,12 +33,11 @@ exec --no-startup-id sudo mount -a
 # Composite manager:
 exec --no-startup-id compton
 # Launch Polybar where appropriate:
-exec_always --no-startup-id ~/.config/polybar/launch.sh
+#exec_always --no-startup-id ~/.config/polybar/launch.sh
 # Add wallpaper:
 exec --no-startup-id variety
-# Set keyboard layout options
-exec_always --no-startup-id setxkbmap -layout us,ru
-exec_always --no-startup-id setxkbmap -option 'grp:win_space_toggle'
+#Runs the key remapping scripts
+exec --no-startup-id ~/.scripts/remaps
 # Unclutter makes the mouse invisible after a brief period
 exec --no-startup-id unclutter
 
@@ -45,6 +46,48 @@ exec --no-startup-id telegram-desktop
 exec --no-startup-id skypeforlinux
 exec --no-startup-id thunderbird
 
+set_from_resource $darkblack    color0  #000000
+set_from_resource $black        color8  #000000
+set_from_resource $darkred      color1  #000000
+set_from_resource $red          color9  #000000
+set_from_resource $darkgreen    color2  #000000
+set_from_resource $green        color10 #000000
+set_from_resource $darkyellow   color3  #000000
+set_from_resource $yellow       color11 #000000
+set_from_resource $darkblue     color4  #000000
+set_from_resource $blue         color12 #000000
+set_from_resource $darkmagenta  color5  #000000
+set_from_resource $magenta      color13 #000000
+set_from_resource $darkcyan     color6  #000000
+set_from_resource $cyan         color14 #000000
+set_from_resource $darkwhite    color7  #000000
+set_from_resource $white        color15 #000000
+set $transparent                #00000000
+
+#                       BORDER		BACKGROUND	TEXT		INDICATOR   CHILD_BORDER
+client.focused		$red		$red		$magenta	$darkmagenta		$darkblue
+client.unfocused	$transparent	$blue		$white		$darkblue		$transparent
+client.focused_inactive	$transparent	$blue		$white		$darkblue		$transparent
+client.urgent		$darkred	$darkred	$black		$darkred		$darkred
+client.background $black
+bar {
+  font pango:Hack 10
+    colors {
+      background $darkblack
+        statusline $darkwhite
+        separator $cyan
+        focused_workspace  $blue $darkblue $darkwhite
+        active_workspace   $blue $blue $darkwhite
+        inactive_workspace $darkblack $darkblack $white
+        urgent_workspace   $darkblack $darkblack $white
+    }
+  status_command i3blocks
+    position top
+    mode dock
+    modifier None
+}
+# Run the script to update the mpd i3block on change.
+exec --no-startup-id "pgrep -x i3mpdupdate || i3mpdupdate"
 ###---Audio and Music Definitions---###
 ## For mpc:
 set $music $term -e ncmpcpp
@@ -107,7 +150,7 @@ bindsym $mod+s          gaps inner current plus 5
 bindsym $mod+Shift+s    gaps inner current minus 5
 
 # Exec menu
-bindsym $mod+d exec     rofi -show run -font "Cantarell 18"
+bindsym $mod+d exec     rofi -show run -font "Cantarell 36"
 
 bindsym $mod+f          fullscreen toggle
 bindsym $mod+g          workspace prev
@@ -216,9 +259,9 @@ bindsym Shift+Print     exec --no-startup-id scrot -s
 
 ###---Extra XF86 Keys---###
 # These are the extra media keys that some keyboards have.
-bindsym XF86AudioMute         exec $mute
-bindsym XF86AudioLowerVolume  exec $dec
-bindsym XF86AudioRaiseVolume  exec $inc
+bindsym XF86AudioMute         exec --no-startup-id lmc mute
+bindsym XF86AudioLowerVolume  exec --no-startup-id lmc down 5
+bindsym XF86AudioRaiseVolume  exec --no-startup-id lmc up 5
 bindsym XF86PowerOff          exec sudo shutdown -h now
 bindsym XF86ScreenSaver       exec exec --no-startup-id ~/.config/i3/lock.sh
 bindsym XF86Eject             exec sudo umount -R /mnt
