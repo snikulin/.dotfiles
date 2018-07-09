@@ -6,7 +6,7 @@
 # Needed for i3-gaps
 hide_edge_borders both
 for_window [class="^.*"] border pixel 0
-font pango:Cantarell Regular 12
+font pango:Cantarell Regular 14
 
 set $mod Mod4
 floating_modifier $mod
@@ -63,11 +63,11 @@ set $white        #fdf6e3
 set $transparent                #00000000
 
 #                       BORDER		BACKGROUND	TEXT		INDICATOR   CHILD_BORDER
-client.focused		$red		$red		$magenta	$darkmagenta		$darkblue
-client.unfocused	$transparent	$blue		$white		$darkblue		$transparent
-client.focused_inactive	$transparent	$blue		$white		$darkblue		$transparent
-client.urgent		$darkred	$darkred	$black		$darkred		$darkred
-client.background $black
+client.focused          $red		$darkblue		$white	$darkmagenta		$darkblue
+client.unfocused        $transparent	$darkblack		$white		$darkblue		$transparent
+client.focused_inactive $transparent	$darkblack		$white		$darkblue		$transparent
+client.urgent           $darkred	$darkred	$black		$darkred		$darkred
+client.background       $black
 bar {
   font pango:Hack 12
     colors {
