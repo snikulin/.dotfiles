@@ -50,7 +50,7 @@ HIST_STAMPS="dd.mm.yyyy"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git battery brew bundler docker docker-compose rails sublime)
+plugins=(git battery brew bundler docker docker-compose rails sublime vi-mode)
 
 # User configuration
 
