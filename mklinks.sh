@@ -12,6 +12,7 @@ ln -sf ~/.dotfiles/.config/i3 -t ~/.config
 ln -sf ~/.dotfiles/.config/i3blocks -t ~/.config
 ln -sf ~/.dotfiles/.config/polybar -t ~/.config
 ln -sf ~/.dotfiles/.config/rofi -t ~/.config
+ln -sf ~/.dotfiles/.Xdefaults ~/.Xdefaults
 
 if [[ `uname` = "Linux" ]]; then
   dconf write /org/gnome/desktop/input-sources/xkb-options "['grp_led:scroll']"
