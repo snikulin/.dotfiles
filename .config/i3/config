@@ -36,8 +36,8 @@ exec --no-startup-id ~/.scripts/remaps
 exec --no-startup-id unclutter
 
 # display settings
-# exec --no-startup-id ~/.config/i3/1080p.sh
-exec --no-startup-id ~/.config/i3/4k.sh
+exec --no-startup-id ~/.config/i3/1080p.sh
+# exec --no-startup-id ~/.config/i3/4k.sh
 
 # Launch usefull applications
 exec --no-startup-id telegram-desktop
