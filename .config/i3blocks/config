@@ -6,6 +6,11 @@ markup=pango
 command=i3weather
 interval=3600
 
+[backlight]
+interval=once
+command=i3backlight
+signal=12
+
 [volume]
 interval=once
 command=i3volume
