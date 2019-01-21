@@ -45,4 +45,4 @@ URxvt.colorUL:		#4682B4
 
 rofi.lines:  7
 rofi.width:  30
-Xft.dpi:     240
+Xft.dpi:     144
