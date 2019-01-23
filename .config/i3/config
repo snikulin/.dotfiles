@@ -13,12 +13,6 @@ floating_modifier $mod
 
 set $term st
 
-set $bg_color            #2f343f
-set $inactive_bg_color   #2f343f
-set $text_color          #f3f4f5
-set $inactive_text_color #676E7D
-set $urgent_bg_color     #E53935
-
 ###---Starting External Scripts---###
 # Torrent daemon:
 exec --no-startup-id transmission-daemon
@@ -44,23 +38,24 @@ exec --no-startup-id telegram-desktop
 exec --no-startup-id skypeforlinux
 exec --no-startup-id thunderbird
 
-set $darkblack    #073642
-set $black        #002b36
-set $darkred      #dc322f
-set $red          #cb4b16
-set $darkgreen    #859900
-set $green        #586e75
-set $darkyellow   #b58900
-set $yellow       #657b83
-set $darkblue     #268bd2
-set $blue         #839496
-set $darkmagenta  #d33682
-set $magenta      #6c71c4
-set $darkcyan     #2aa198
-set $cyan         #93a1a1
-set $darkwhite    #eee8d5
-set $white        #fdf6e3
-set $transparent                #00000000
+# Set Xresources colors:
+set_from_resource $darkblack	color0  #000000
+set_from_resource $black	color8  #000000
+set_from_resource $darkred	color1  #000000
+set_from_resource $red		color9  #000000
+set_from_resource $darkgreen	color2  #000000
+set_from_resource $green	color10 #000000
+set_from_resource $darkyellow	color3  #000000
+set_from_resource $yellow	color11 #000000
+set_from_resource $darkblue	color4  #000000
+set_from_resource $blue		color12 #000000
+set_from_resource $darkmagenta	color5  #000000
+set_from_resource $magenta	color13 #000000
+set_from_resource $darkcyan	color6  #000000
+set_from_resource $cyan		color14 #000000
+set_from_resource $darkwhite	color7  #000000
+set_from_resource $white	color15 #000000
+set $transparent		#00000000
 
 #                       BORDER		BACKGROUND	TEXT		INDICATOR   CHILD_BORDER
 client.focused          $red		$darkblue		$white	$darkmagenta		$darkblue
