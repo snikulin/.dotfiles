@@ -44,6 +44,7 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'potatoesmaster/i3-vim-syntax'
+Plugin 'leafgarland/typescript-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
