@@ -165,10 +165,7 @@ let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"
 " }}}
 
 " {{{ Python plugins
-if s:uname == "Darwin\n"
-  let g:python_host_prog  = '/usr/local/bin/python'
-  let g:python3_host_prog = '/usr/local/bin/python3'
-else
+if s:uname != "Darwin\n"
   let g:python_host_prog  = '/usr/bin/python'
   let g:python3_host_prog = '/usr/bin/python3'
 endif
