@@ -36,7 +36,7 @@ exec --no-startup-id ~/.config/i3/1080p.sh
 # Launch usefull applications
 exec --no-startup-id telegram-desktop
 exec --no-startup-id skypeforlinux
-exec --no-startup-id thunderbird
+#exec --no-startup-id thunderbird
 
 # Set Xresources colors:
 set_from_resource $darkblack	color0  #000000
