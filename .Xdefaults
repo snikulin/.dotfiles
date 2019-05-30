@@ -22,21 +22,4 @@
 *.color14: #8ec07c
 *.color15: #ebdbb2
 
-URxvt.intensityStyles:	false
-!!URxvt.background:       [70]#000000
-URxvt.depth:		32
-URxvt.font: 		xft:Droid Sans Mono Slashed for Powerline:size=16
-URxvt.scrollBar:	false
-URxvt.cursorColor:	white
-URxvt.perl-ext-common:	default,matcher,resize-font
-URxvt.perl-lib:		$HOME/.config/Scripts
-URxvt.url-launcher:	/usr/bin/xdg-open
-URxvt.matcher.button:	1
-URxvt.resize-font.smaller:	C-Down
-URxvt.resize-font.bigger:	C-Up
-
-URxvt.colorUL:		#4682B4
-
-rofi.lines:  7
-rofi.width:  30
 Xft.dpi:     144

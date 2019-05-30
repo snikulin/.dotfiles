@@ -6,26 +6,26 @@
 # Needed for i3-gaps
 hide_edge_borders both
 for_window [class="^.*"] border pixel 0
-font pango:Cantarell Regular 14
+gaps inner 0
+gaps outer 0
+font pango:Nimbus Sans 12
 
+set $term --no-startup-id $TERMINAL
+set $hibernate sudo -A systemctl suspend
 set $mod Mod4
 floating_modifier $mod
 
-set $term st
-
 ###---Starting External Scripts---###
-# Torrent daemon:
-exec --no-startup-id transmission-daemon
 # Wifi applet:
 exec --no-startup-id nm-applet
-# Mount other drives:
-exec --no-startup-id sudo mount -a
+# Starts dunst for notifications:
+exec --no-startup-id dunst
 # Composite manager:
-exec --no-startup-id compton
+exec --no-startup-id xcompmgr
 # Add wallpaper:
 exec --no-startup-id variety
 #Runs the key remapping scripts
-exec --no-startup-id ~/.scripts/remaps
+exec --no-startup-id remaps
 # Unclutter makes the mouse invisible after a brief period
 exec --no-startup-id unclutter
 
@@ -37,7 +37,6 @@ exec --no-startup-id ~/.config/i3/1080p.sh
 # Launch usefull applications
 exec --no-startup-id telegram-desktop
 exec --no-startup-id skypeforlinux
-#exec --no-startup-id thunderbird
 
 # Set Xresources colors:
 set_from_resource $darkblack	color0  #000000
@@ -65,7 +64,7 @@ client.focused_inactive $transparent	$darkblack		$white		$darkblue		$transparent
 client.urgent           $darkred	$darkred	$black		$darkred		$darkred
 client.background       $black
 bar {
-  font pango:Hack 12
+  font pango:Hack 10
     colors {
       background $darkblack
         statusline $darkwhite
@@ -106,10 +105,10 @@ bindsym $mod+grave      exec --no-startup-id dmenuunicode
 bindsym $mod+q          kill
 bindsym $mod+Shift+q    kill
 
-bindsym $mod+Shift+w    exec --no-startup-id firefox
-bindsym $mod+Shift+e    exec --no-startup-id thunderbird
+bindsym $mod+w          exec --no-startup-id $BROWSER
+bindsym $mod+e          exec --no-startup-id emacs
 
-bindsym $mod+r          exec $term -e ranger
+bindsym $mod+r          exec $term -e $FILE
 bindsym $mod+Shift+r    restart
 
 bindsym $mod+t          split toggle
