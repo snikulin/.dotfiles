@@ -21,7 +21,7 @@ exec --no-startup-id nm-applet
 # Starts dunst for notifications:
 exec --no-startup-id dunst
 # Composite manager:
-exec --no-startup-id xcompmgr
+exec --no-startup-id compton
 # Add wallpaper:
 exec --no-startup-id variety
 #Runs the key remapping scripts
