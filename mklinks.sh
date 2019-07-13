@@ -29,6 +29,7 @@ ln -sf ~/.dotfiles/.config/polybar -t ~/.config
 ln -sf ~/.dotfiles/.config/rofi -t ~/.config
 ln -sf ~/.dotfiles/.config/zathura -t ~/.config
 ln -sf ~/.dotfiles/.config/ranger -t ~/.config
+ln -sf ~/.dotfiles/.config/sxhkd -t ~/.config
 ln -sf ~/.dotfiles/.config/vifm -t ~/.config
 
 if [[ `uname` = "Linux" ]]; then
