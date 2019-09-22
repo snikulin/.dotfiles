@@ -1,2 +1,3 @@
 #!/bin/bash
-primusrun minecraft-launcher
+export XMODIFIERS="@im=null"
+vblank_mode=0 minecraft-launcher
