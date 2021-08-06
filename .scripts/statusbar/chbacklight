@@ -1,9 +1,0 @@
-#!/bin/bash
-
-newbacklight="pkill -RTMIN+13 i3blocks"
-
-case "$1" in
-	"up") xbacklight -inc "$2" ; $newbacklight ;;
-	"down") xbacklight -dec "$2" ; $newbacklight ;;
-esac
-exit
