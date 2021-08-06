@@ -18,8 +18,6 @@ super + r
 	$TERMINAL -e $FILE
 super + e
 	emacs
-super + s
-	$TERMINAL -e htop
 super + shift + a
 	$TERMINAL -e pulsemixer; refbar
 super + shift + c
@@ -43,9 +41,6 @@ Print
 # Pick screenshot type
 shift + Print
 	maimpick
-# Print: Record audio or video; Del: kill recording
-super + {Print,Delete}
-	dmenurecord {,kill}
 
 # Pause audio
 super + {_,shift +} p
