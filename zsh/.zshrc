@@ -23,7 +23,6 @@ zle -N down-line-or-beginning-search
 
 # Colors
 autoload -Uz colors && colors
-export ZDOTDIR=~/.config/zsh
 
 # Useful Functions
 source ~/.config/zsh/zsh-functions
