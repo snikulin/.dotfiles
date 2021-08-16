@@ -1,22 +1,47 @@
-export ZSH=$HOME/.oh-my-zsh
+# some useful options (man zshoptions)
+setopt autocd extendedglob nomatch menucomplete
+setopt interactive_comments
+stty stop undef		# Disable ctrl-s to freeze terminal.
+zle_highlight=('paste:none')
 
-ZSH_THEME="gentoo"
+# beeping is annoying
+unsetopt BEEP
 
-# Uncomment the following line to display red dots whilst waiting for completion.
-COMPLETION_WAITING_DOTS="true"
 
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-HIST_STAMPS="dd.mm.yyyy"
+# completions
+autoload -Uz compinit
+zstyle ':completion:*' menu select
+# zstyle ':completion::complete:lsof:*' menu yes select
+zmodload zsh/complist
+# compinit
+_comp_options+=(globdots)		# Include hidden files.
 
-source $ZSH/oh-my-zsh.sh
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+
+# Colors
+autoload -Uz colors && colors
+export ZDOTDIR=~/.config/zsh
+
+# Useful Functions
+source ~/.config/zsh/zsh-functions
+
+# Normal files to source
+zsh_add_file "zsh-exports"
+zsh_add_file "zsh-vim-mode"
+zsh_add_file "zsh-prompt"
+
+zsh_add_plugin "zsh-users/zsh-autosuggestions"
+zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
+zsh_add_plugin "hlissner/zsh-autopair"
 
 [ -f ~/.config/zsh/.local.env ] && source ~/.config/zsh/.local.env
 
 source ~/.profile
 source ~/.aliases
 
-bindkey -s ^f "tmux-sessionizer\n"
+bindkey -s "^f" "tmux-sessionizer\n"
 fortune ~/.local/share/fortune/quotes
 

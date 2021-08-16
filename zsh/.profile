@@ -24,11 +24,9 @@ if [ -d "$HOME/.rvm/bin" ] ; then
   [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 fi
 
-# NVM
-if [ -d "$HOME/.nvm" ] ; then
-  export NVM_DIR="$HOME/.nvm"
-  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-fi
+# N - node version manager
+export N_PREFIX=~/.local/cache/n
+PATH="$HOME/.local/cache/n/bin:$PATH"
 
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
