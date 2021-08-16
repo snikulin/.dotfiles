@@ -17,5 +17,6 @@ source $ZSH/oh-my-zsh.sh
 source ~/.profile
 source ~/.aliases
 
+bindkey -s ^f "tmux-sessionizer\n"
 fortune ~/.local/share/fortune/quotes
 
