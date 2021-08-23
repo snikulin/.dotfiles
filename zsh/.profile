@@ -18,6 +18,11 @@ if [ -d "$HOME/.local/bin" ] ; then
   PATH="$HOME/.local/bin:$PATH"
 fi
 
+# Rust cargo
+if [ -d "$HOME/.cargo/bin" ] ; then
+  PATH="$HOME/.cargo/bin:$PATH"
+fi
+
 # RVM
 if [ -d "$HOME/.rvm/bin" ] ; then
   PATH="$PATH:$HOME/.rvm/bin"
