@@ -51,6 +51,8 @@ let mapleader = " "
 " Quickfix mappings
 nnoremap <C-j> <cmd>cprevious<cr>
 nnoremap <C-k> <cmd>cnext<cr>
+nnoremap <leader>co <cmd>copen<cr>
+nnoremap <leader>cc <cmd>cclose<cr>
 
 " Telescope
 lua << EOF
