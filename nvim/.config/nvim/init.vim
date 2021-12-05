@@ -37,6 +37,10 @@ Plug 'colepeters/spacemacs-theme.vim'
 Plug 'phanviet/vim-monokai-pro'
 Plug 'flazz/vim-colorschemes'
 Plug 'chriskempson/base16-vim'
+
+" My Co pilot
+Plug 'github/copilot.vim'
+
 " Initialize plugin system
 call plug#end()
 
