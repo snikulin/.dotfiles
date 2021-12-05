@@ -30,6 +30,7 @@ Plug 'vim-utils/vim-man'
 Plug 'hrsh7th/nvim-compe'
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'tpope/vim-surround'
+Plug 'numToStr/Comment.nvim'
 
 " Color themes
 Plug 'gruvbox-community/gruvbox'
@@ -239,3 +240,6 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 EOF
+
+lua require('Comment').setup()
+
