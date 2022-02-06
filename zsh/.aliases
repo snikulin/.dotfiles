@@ -1,2 +1,5 @@
 alias gst='git status'
+alias ls='exa --icons'
+alias vim='nvim'
+alias v='nvim'
 alias ll='exa -lha --icons'
