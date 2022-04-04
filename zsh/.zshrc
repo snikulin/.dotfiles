@@ -13,7 +13,7 @@ autoload -Uz compinit
 zstyle ':completion:*' menu select
 # zstyle ':completion::complete:lsof:*' menu yes select
 zmodload zsh/complist
-# compinit
+compinit
 _comp_options+=(globdots)		# Include hidden files.
 
 autoload -U up-line-or-beginning-search
@@ -40,4 +40,11 @@ source ~/.aliases
 
 bindkey -s "^f" "tmux-sessionizer\n"
 fortune ~/.local/share/fortune/quotes
+
+
+# The next line updates PATH for Yandex Cloud CLI.
+if [ -f '/Users/nik/yandex-cloud/path.bash.inc' ]; then source '/Users/nik/yandex-cloud/path.bash.inc'; fi
+
+# The next line enables shell command completion for yc.
+if [ -f '/Users/nik/yandex-cloud/completion.zsh.inc' ]; then source '/Users/nik/yandex-cloud/completion.zsh.inc'; fi
 
