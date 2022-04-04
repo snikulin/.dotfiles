@@ -447,7 +447,7 @@ require'nvim-treesitter.configs'.setup {
   ensure_installed = {'org'}, -- Or run :TSUpdate org
 }
 
-require('orgmode').setup({
+require('orgmode').setup_ts_grammar({
   org_agenda_files = {'~/org/**/*'},
   org_default_notes_file = '~/org/inbox.org',
 })
