@@ -4,6 +4,7 @@ stow tmux
 stow nvim
 stow scripts
 stow fortune
+stow alacritty
 
 if [[ `uname` = "Darwin" ]]; then
   stow macos

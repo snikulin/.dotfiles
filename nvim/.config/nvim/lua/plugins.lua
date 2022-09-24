@@ -1,14 +1,28 @@
-return require('packer').startup(function()
+local status, packer = pcall(require, "packer")
+if (not status) then
+  print("Packer is not installed")
+  return
+end
+
+vim.cmd [[packadd packer.nvim]]
+
+packer.startup(function(use)
   use 'wbthomason/packer.nvim' -- Package manager
   use 'nvim-lua/popup.nvim'
   use 'nvim-lua/plenary.nvim'
   use {'nvim-telescope/telescope.nvim', requires = { {'nvim-lua/plenary.nvim'} }}
-  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+  use 'nvim-telescope/telescope-file-browser.nvim'
+  use 'windwp/nvim-autopairs'
+  use 'windwp/nvim-ts-autotag'
+
   use 'kyazdani42/nvim-web-devicons'
   use {
-    'neovim/nvim-lspconfig', 
+    'neovim/nvim-lspconfig',
     'williamboman/nvim-lsp-installer'
   }
+  use 'glepnir/lspsaga.nvim' -- LSP UIs
+  use 'jose-elias-alvarez/null-ls.nvim'
+  use 'MunifTanjim/prettier.nvim'
   use 'nvim-lua/completion-nvim'
   use 'ray-x/lsp_signature.nvim'
   use 'mfussenegger/nvim-dap'
@@ -27,5 +41,9 @@ return require('packer').startup(function()
   use 'phanviet/vim-monokai-pro'
   use 'flazz/vim-colorschemes'
   use 'chriskempson/base16-vim'
-  use 'github/copilot.vim'
+  use { "catppuccin/nvim", as = "catppuccin" }
+  use {
+  'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+  }
 end)
