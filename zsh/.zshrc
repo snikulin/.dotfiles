@@ -48,3 +48,5 @@ if [ -f '/Users/nik/yandex-cloud/path.bash.inc' ]; then source '/Users/nik/yande
 # The next line enables shell command completion for yc.
 if [ -f '/Users/nik/yandex-cloud/completion.zsh.inc' ]; then source '/Users/nik/yandex-cloud/completion.zsh.inc'; fi
 
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
