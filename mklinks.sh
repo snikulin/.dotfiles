@@ -1,4 +1,5 @@
 #!/bin/bash
+mkdir -p ~/.local/cache/
 stow --no-folding zsh
 stow --no-folding tmux
 stow --no-folding nvim
