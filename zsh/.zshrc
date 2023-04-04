@@ -37,15 +37,13 @@ zsh_add_plugin "hlissner/zsh-autopair"
 source ~/.profile
 source ~/.aliases
 
-bindkey -s "^f" "tmux-sessionizer\n"
 fortune ~/.local/share/fortune/quotes
 
-
 # The next line updates PATH for Yandex Cloud CLI.
-if [ -f '/Users/nik/yandex-cloud/path.bash.inc' ]; then source '/Users/nik/yandex-cloud/path.bash.inc'; fi
+if [ -f '$HOME/yandex-cloud/path.bash.inc' ]; then source '$HOME/yandex-cloud/path.bash.inc'; fi
 
 # The next line enables shell command completion for yc.
-if [ -f '/Users/nik/yandex-cloud/completion.zsh.inc' ]; then source '/Users/nik/yandex-cloud/completion.zsh.inc'; fi
+if [ -f '$HOME/yandex-cloud/completion.zsh.inc' ]; then source '$HOME/yandex-cloud/completion.zsh.inc'; fi
 
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
